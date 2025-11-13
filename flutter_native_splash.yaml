@@ -1,0 +1,42 @@
+# Flutter Native Splash Configuration
+# Run: flutter pub run flutter_native_splash:create
+
+flutter_native_splash:
+  # Background color (use the app's primary color)
+  color: "#6B4EFF"
+
+  # Optional: background image
+  # background_image: "assets/images/splash_background.png"
+
+  # App icon to show in the center
+  # For now, we'll use a simple icon
+  # You can replace this with your custom logo image
+  # image: assets/logo/splash_logo.png
+
+  # Branding image (bottom of the splash screen)
+  # branding: assets/logo/branding_logo.png
+
+  # App icon color (for the default icon)
+  color_dark: "#1A1A2E"
+
+  # Android specific settings
+  android: true
+  android_12:
+    # Android 12+ splash screen configuration
+    color: "#6B4EFF"
+    color_dark: "#1A1A2E"
+    # image: assets/logo/splash_logo.png
+    # branding: assets/logo/branding_logo.png
+
+  # iOS specific settings (for future)
+  ios: false
+
+  # Web specific settings (for future)
+  web: false
+
+  # Fullscreen mode
+  fullscreen: true
+
+  # Info.plist settings (iOS)
+  info_plist_files:
+    - 'ios/Runner/Info.plist'

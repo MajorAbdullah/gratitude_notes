@@ -1,4 +1,4 @@
-package com.example.gratitude_notes
+package com.gratitudenotes.app
 
 import io.flutter.embedding.android.FlutterActivity
 
