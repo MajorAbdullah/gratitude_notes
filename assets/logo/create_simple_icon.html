@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Notes - Simple Icon Creator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            color: #6B4EFF;
+            margin-bottom: 10px;
+        }
+
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .icon-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+
+        #icon {
+            width: 1024px;
+            height: 1024px;
+            background: linear-gradient(135deg, #6B4EFF 0%, #9C7FFF 100%);
+            border-radius: 22.5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(107, 78, 255, 0.4);
+        }
+
+        .sparkle {
+            font-size: 320px;
+            text-shadow:
+                0 0 20px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(255, 215, 0, 0.6),
+                0 0 60px rgba(255, 215, 0, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            justify-content: center;
+        }
+
+        button {
+            background: #6B4EFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #5A3EDF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(107, 78, 255, 0.4);
+        }
+
+        select, input {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            font-size: 16px;
+        }
+
+        .preview-small {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .preview-item {
+            text-align: center;
+        }
+
+        .preview-icon {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .size-label {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Gratitude Notes Icon Creator</h1>
+
+    <div class="instructions">
+        <h3>📋 Instructions:</h3>
+        <ol>
+            <li>Customize the icon using the controls below</li>
+            <li>Right-click on the large icon below</li>
+            <li>Select "Save Image As..."</li>
+            <li>Save as <code>app_icon.png</code></li>
+            <li>Place in <code>assets/logo/</code> folder</li>
+            <li>Run: <code>flutter pub run flutter_launcher_icons</code></li>
+        </ol>
+    </div>
+
+    <div class="controls">
+        <select id="emoji" onchange="updateIcon()">
+            <option value="✨">✨ Sparkle</option>
+            <option value="❤️">❤️ Heart</option>
+            <option value="🙏">🙏 Grateful Hands</option>
+            <option value="📝">📝 Note</option>
+            <option value="📔">📔 Notebook</option>
+            <option value="🌟">🌟 Star</option>
+            <option value="💫">💫 Dizzy</option>
+            <option value="🌸">🌸 Flower</option>
+            <option value="🕉️">🕉️ Om</option>
+            <option value="☮️">☮️ Peace</option>
+        </select>
+
+        <select id="gradient" onchange="updateIcon()">
+            <option value="purple">Purple (Default)</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+            <option value="pink">Pink</option>
+            <option value="teal">Teal</option>
+        </select>
+
+        <button onclick="downloadIcon()">💾 Download Icon</button>
+        <button onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+    </div>
+
+    <div class="icon-container">
+        <div id="icon">
+            <div class="sparkle">✨</div>
+        </div>
+    </div>
+
+    <div class="preview-small">
+        <h3>Preview at Different Sizes:</h3>
+        <div class="preview-grid">
+            <div class="preview-item">
+                <div class="preview-icon">
+                    <canvas id="canvas48" width="48" height="48"></canvas>
+                </div>
+                <div class="size-label">48x48 (mdpi)</div>
+            </div>
+            <div class="preview-item">
+                <div class="preview-icon">
+                    <canvas id="canvas72" width="72" height="72"></canvas>
+                </div>
+                <div class="size-label">72x72 (hdpi)</div>
+            </div>
+            <div class="preview-item">
+                <div class="preview-icon">
+                    <canvas id="canvas96" width="96" height="96"></canvas>
+                </div>
+                <div class="size-label">96x96 (xhdpi)</div>
+            </div>
+            <div class="preview-item">
+                <div class="preview-icon">
+                    <canvas id="canvas144" width="144" height="144"></canvas>
+                </div>
+                <div class="size-label">144x144 (xxhdpi)</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const gradients = {
+            purple: 'linear-gradient(135deg, #6B4EFF 0%, #9C7FFF 100%)',
+            blue: 'linear-gradient(135deg, #4A90E2 0%, #7CB9E8 100%)',
+            green: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
+            orange: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
+            pink: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
+            teal: 'linear-gradient(135deg, #00BCD4 0%, #4DD0E1 100%)'
+        };
+
+        function updateIcon() {
+            const emoji = document.getElementById('emoji').value;
+            const gradient = document.getElementById('gradient').value;
+            const icon = document.getElementById('icon');
+            const sparkle = icon.querySelector('.sparkle');
+
+            sparkle.textContent = emoji;
+            icon.style.background = gradients[gradient];
+
+            updatePreviews();
+        }
+
+        function updatePreviews() {
+            const icon = document.getElementById('icon');
+            const sizes = [48, 72, 96, 144];
+
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`canvas${size}`);
+                const ctx = canvas.getContext('2d');
+                const scale = size / 1024;
+
+                // Create temporary canvas with icon
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = 1024;
+                tempCanvas.height = 1024;
+                const tempCtx = tempCanvas.getContext('2d');
+
+                // Draw gradient background
+                const gradient = tempCtx.createLinearGradient(0, 0, 1024, 1024);
+                const currentGradient = document.getElementById('gradient').value;
+                if (currentGradient === 'purple') {
+                    gradient.addColorStop(0, '#6B4EFF');
+                    gradient.addColorStop(1, '#9C7FFF');
+                } else if (currentGradient === 'blue') {
+                    gradient.addColorStop(0, '#4A90E2');
+                    gradient.addColorStop(1, '#7CB9E8');
+                } else if (currentGradient === 'green') {
+                    gradient.addColorStop(0, '#4CAF50');
+                    gradient.addColorStop(1, '#81C784');
+                } else if (currentGradient === 'orange') {
+                    gradient.addColorStop(0, '#FF9800');
+                    gradient.addColorStop(1, '#FFB74D');
+                } else if (currentGradient === 'pink') {
+                    gradient.addColorStop(0, '#E91E63');
+                    gradient.addColorStop(1, '#F06292');
+                } else if (currentGradient === 'teal') {
+                    gradient.addColorStop(0, '#00BCD4');
+                    gradient.addColorStop(1, '#4DD0E1');
+                }
+
+                // Draw rounded rectangle
+                const radius = 230;
+                tempCtx.beginPath();
+                tempCtx.moveTo(radius, 0);
+                tempCtx.lineTo(1024 - radius, 0);
+                tempCtx.quadraticCurveTo(1024, 0, 1024, radius);
+                tempCtx.lineTo(1024, 1024 - radius);
+                tempCtx.quadraticCurveTo(1024, 1024, 1024 - radius, 1024);
+                tempCtx.lineTo(radius, 1024);
+                tempCtx.quadraticCurveTo(0, 1024, 0, 1024 - radius);
+                tempCtx.lineTo(0, radius);
+                tempCtx.quadraticCurveTo(0, 0, radius, 0);
+                tempCtx.closePath();
+                tempCtx.fillStyle = gradient;
+                tempCtx.fill();
+
+                // Draw emoji
+                tempCtx.font = '320px Arial';
+                tempCtx.textAlign = 'center';
+                tempCtx.textBaseline = 'middle';
+                tempCtx.fillText(document.getElementById('emoji').value, 512, 512);
+
+                // Scale down to preview size
+                ctx.clearRect(0, 0, size, size);
+                ctx.drawImage(tempCanvas, 0, 0, 1024, 1024, 0, 0, size, size);
+            });
+        }
+
+        async function downloadIcon() {
+            // This would require html2canvas or similar library
+            alert('Right-click on the large icon above and select "Save Image As..."');
+        }
+
+        async function copyToClipboard() {
+            alert('Right-click on the icon and select "Copy Image" to copy to clipboard');
+        }
+
+        // Initialize
+        updateIcon();
+    </script>
+</body>
+</html>

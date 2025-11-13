@@ -1,0 +1,36 @@
+# Flutter Launcher Icons Configuration
+# Generate icons with: flutter pub run flutter_launcher_icons
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+
+  # Path to your custom icon image
+  image_path: "assets/logo/app_icon.png"
+
+  # Adaptive icon configuration (Android 8.0+)
+  # Using the same image for both foreground and a complementary background color
+  adaptive_icon_background: "#F9EED7"  # Warm beige matching the icon
+  adaptive_icon_foreground: "assets/logo/app_icon.png"
+
+  # Remove alpha channel for better compatibility
+  remove_alpha_ios: true
+
+  # Background color for iOS (for future)
+  background_color_ios: "#F9EED7"
+
+  # Minimum Android SDK
+  min_sdk_android: 21
+
+  # Platform specific settings
+  android_adaptive_icon_config:
+    # Generate adaptive icons for Android 8.0+
+    generate: true
+
+  # Icon sizes to generate (all standard sizes)
+  android_sizes:
+    - 48   # mdpi
+    - 72   # hdpi
+    - 96   # xhdpi
+    - 144  # xxhdpi
+    - 192  # xxxhdpi

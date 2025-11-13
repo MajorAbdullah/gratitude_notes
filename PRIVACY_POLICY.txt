@@ -1,0 +1,141 @@
+PRIVACY POLICY FOR GRATITUDE NOTES
+
+Last Updated: November 13, 2025
+
+INTRODUCTION
+
+This Privacy Policy describes how Gratitude Notes ("we", "our", or "us") collects, uses, and protects your information when you use our mobile application (the "Service"). We are committed to protecting your privacy and ensuring the security of your personal information.
+
+INFORMATION WE COLLECT
+
+1. GRATITUDE NOTES CONTENT
+   - Daily gratitude entries (3 notes per day)
+   - Dates associated with your entries
+   - Creation and modification timestamps
+
+2. APP SETTINGS AND PREFERENCES
+   - Theme preferences (dark/light mode)
+   - Notification settings and reminder times
+   - Premium subscription status
+   - Premium purchase dates (if applicable)
+
+3. DEVICE INFORMATION
+   - Device timezone for notification scheduling
+   - App version and device capabilities for feature compatibility
+
+HOW WE USE YOUR INFORMATION
+
+We use the collected information solely to:
+- Store your gratitude notes locally on your device
+- Provide daily reminder notifications at your chosen time
+- Maintain your app preferences and settings
+- Enable premium features (if purchased)
+- Export your data when you request it
+
+DATA STORAGE
+
+LOCAL STORAGE ONLY:
+- All your gratitude notes are stored locally on your device using Hive database
+- Your data is NOT transmitted to external servers
+- Your notes remain private and under your control
+- Data persists until you delete the app or manually clear it
+
+THIRD-PARTY SERVICES
+
+We may use the following third-party services:
+
+1. FLUTTER LOCAL NOTIFICATIONS
+   - Purpose: To send you daily reminder notifications
+   - Data Shared: No personal data is shared
+   - Privacy Policy: https://flutter.dev/privacy
+
+2. IN-APP PURCHASE (Google Play/App Store)
+   - Purpose: To process premium subscription purchases
+   - Data Shared: Purchase information handled by platform stores
+   - Your purchase data is managed by Google Play Store or Apple App Store
+
+PERMISSIONS
+
+The app requests the following permissions:
+- NOTIFICATION ACCESS: To send daily gratitude reminders
+- STORAGE ACCESS: To save your notes locally on your device
+- EXPORT ACCESS: To allow you to share/export your gratitude notes
+
+DATA SHARING
+
+WE DO NOT:
+- Sell your personal information to third parties
+- Share your gratitude notes with anyone
+- Upload your data to external servers
+- Use your data for advertising purposes
+- Access your data remotely
+
+DATA EXPORT AND PORTABILITY
+
+You have the right to:
+- Export all your gratitude notes in CSV format
+- Share individual notes via the device's sharing functionality
+- Back up your data through device backup systems
+
+DATA RETENTION AND DELETION
+
+- Your data is stored locally until you delete it
+- Uninstalling the app will remove all local data
+- You can manually delete individual notes or clear all data in app settings
+- We cannot recover deleted data as we do not store it externally
+
+CHILDREN'S PRIVACY
+
+Our Service is suitable for users of all ages. We do not knowingly collect personal information from children under 13 without parental consent. The app's content and functionality are appropriate for all age groups.
+
+DATA SECURITY
+
+We implement appropriate security measures to protect your information:
+- Local encryption of stored data
+- No network transmission of personal content
+- Secure coding practices to prevent unauthorized access
+- Regular security updates through app updates
+
+YOUR RIGHTS
+
+You have the right to:
+- Access all your stored data within the app
+- Modify or delete your gratitude notes at any time
+- Control notification settings and permissions
+- Export your data in a portable format
+- Request clarification about our privacy practices
+
+CHANGES TO THIS PRIVACY POLICY
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by:
+- Posting the new Privacy Policy in the app
+- Updating the "Last Updated" date at the top of this policy
+- Providing in-app notifications for significant changes
+
+Your continued use of the Service after any modifications indicates your acceptance of the updated Privacy Policy.
+
+COMPLIANCE
+
+This Privacy Policy complies with:
+- General Data Protection Regulation (GDPR)
+- California Consumer Privacy Act (CCPA)
+- Children's Online Privacy Protection Act (COPPA)
+- Google Play Developer Policy
+- Apple App Store Guidelines
+
+CONTACT US
+
+If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
+
+Email: [YOUR EMAIL ADDRESS]
+Subject: Gratitude Notes Privacy Inquiry
+
+We will respond to your inquiry within 30 days.
+
+CONSENT
+
+By using our Service, you consent to our Privacy Policy and agree to its terms. If you do not agree with this policy, please do not use our Service.
+
+---
+
+This Privacy Policy is effective as of the date stated above and applies to all users of the Gratitude Notes application.
